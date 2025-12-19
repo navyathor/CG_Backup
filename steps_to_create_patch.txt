@@ -1,0 +1,31 @@
+Steps to apply patch file in openbmc:
+
+========================================================
+
+1. Make changes in code in the path git/lib/ipmi_fru.c
+
+vi /home/openbmc/Navya/openbmc/build/evb-ast2600/tmp/work/armv7ahf-vfpv4d16-openbmc-linux-gnueabi/ipmitool/1.8.19/git/lib
+ipmi_fru.c
+
+
+
+2. git diff lib/ipmi_fru.c > <pathfile_name>
+
+/home/openbmc/Navya/openbmc/build/evb-ast2600/tmp/work/armv7ahf-vfpv4d16-openbmc-linux-gnueabi/ipmitool/1.8.19/git
+
+3. patch -p1 <pathfile_name>
+
+4. quilt refresh - to check the errors like spaces, extra lines etc..
+
+5. Copy path file to .bb file and layer.
+
+vi /home/openbmc/Pushpa/QEMU/openbmc/meta-phosphor/recipes-phosphor/ipmi/ipmitool_%.bbappend
+
+6. build ipmitool and full image.
+
+7. Check your print in qemu 
+
+for example: command: ipmitool fru read 0 /root/fru.bin
+
+output: <print_message>
+ 

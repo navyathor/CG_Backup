@@ -1,0 +1,638 @@
+wget https://ftp.gnu.org/gnu/m4/m4-1.4.19.tar.gz
+
+--2025-05-08 12:42:00--  https://ftp.gnu.org/gnu/m4/m4-1.4.19.tar.gz
+
+Resolving ftp.gnu.org (ftp.gnu.org)... 209.51.188.20, 2001:470:142:3::b
+
+Connecting to ftp.gnu.org (ftp.gnu.org)|209.51.188.20|:443... connected.
+
+ERROR: cannot verify ftp.gnu.org's certificate, issued by ‘CN=ztnzia-internet.capgemini.com,OU=Group Infra,O=Capgemini,L=Paris,ST=Ile-de-france,C=FR’:
+
+  Unable to locally verify the issuer's authority.
+
+To connect to ftp.gnu.org insecurely, use `--no-check-certificate'.
+ 
+wget --no-check-certificate https://ftp.gnu.org/gnu/autoconf/autoconf-2.71.tar.gz
+
+wget --no-check-certificate https://ftp.gnu.org/gnu/automake/automake-1.16.5.tar.gz
+
+wget --no-check-certificate https://ftp.gnu.org/gnu/libtool/libtool-2.4.7.tar.gz
+
+wget --no-check-certificate https://download.savannah.gnu.org/releases/quilt/quilt-0.67.tar.gz
+
+ 
+git config --global http.sslVerify false
+
+bitbake gnu-config-native
+
+ 
+
+
+ngarinav@inlen6239008810:~/poky/build/downloads$ git config --global http.sslVerify false
+
+bitbake gnu-config-native
+
+Loading cache: 100% |#################################################################################################| Time: 0:00:00
+
+Loaded 1644 entries from dependency cache.
+
+NOTE: Resolving any missing task queue dependencies
+ 
+Build Configuration:
+
+BB_VERSION           = "2.0.0"
+
+BUILD_SYS            = "x86_64-linux"
+
+NATIVELSBSTRING      = "ubuntu-22.04"
+
+TARGET_SYS           = "x86_64-poky-linux"
+
+MACHINE              = "qemux86-64"
+
+DISTRO               = "poky"
+
+DISTRO_VERSION       = "4.0.26"
+
+TUNE_FEATURES        = "m64 core2"
+
+TARGET_FPU           = ""
+
+meta
+
+meta-poky
+
+meta-yocto-bsp       = "kirkstone:e9e862752d122945318685ff9eaf6a3090f0f961"
+ 
+NOTE: Fetching uninative binary shim http://downloads.yoctoproject.org/releases/uninative/4.7/x86_64-nativesdk-libc-4.7.tar.xz;sha256sum=5800d4e9a129d1be09cf548918d25f74e91a7c1193ae5239d5b0c9246c486d2c (will check PREMIRRORS first)
+
+WARNING: Disabling uninative as unable to fetch uninative tarball: Network access disabled through BB_NO_NETWORK (or set indirectly due to use of BB_FETCH_PREMIRRORONLY) but access requested with command /usr/bin/env wget -t 2 -T 100 -O /home/ngarinav/poky/build/downloads/uninative/5800d4e9a129d1be09cf548918d25f74e91a7c1193ae5239d5b0c9246c486d2c/x86_64-nativesdk-libc-4.7.tar.xz.tmp -P /home/ngarinav/poky/build/downloads/uninative/5800d4e9a129d1be09cf548918d25f74e91a7c1193ae5239d5b0c9246c486d2c 'http://downloads.yoctoproject.org/releases/uninative/4.7/x86_64-nativesdk-libc-4.7.tar.xz' (for url http://downloads.yoctoproject.org/releases/uninative/4.7/x86_64-nativesdk-libc-4.7.tar.xz;sha256sum=5800d4e9a129d1be09cf548918d25f74e91a7c1193ae5239d5b0c9246c486d2c)
+
+WARNING: To build your own uninative loader, please bitbake uninative-tarball and set UNINATIVE_TARBALL appropriately.
+
+Initialising tasks: 100% |############################################################################################| Time: 0:00:00
+
+Sstate summary: Wanted 5 Local 0 Mirrors 0 Missed 5 Current 0 (0% match, 0% complete)
+
+NOTE: Executing Tasks
+
+ERROR: gnu-config-native-20211108+gitAUTOINC+191bcb948f-r0 do_fetch: Bitbake Fetcher Error: NetworkAccess('git://git.savannah.gnu.org/git/config.git;protocol=https;branch=master', 'LANG=C git -c core.fsyncobjectfiles=0 -c gc.autoDetach=false -c core.pager=cat clone --bare --mirror https://git.savannah.gnu.org/git/config.git /home/ngarinav/poky/build/downloads/git2/git.savannah.gnu.org.git.config.git --progress')
+
+ERROR: Logfile of failure stored in: /home/ngarinav/poky/build/tmp/work/x86_64-linux/gnu-config-native/20211108+gitAUTOINC+191bcb948f-r0/temp/log.do_fetch.2568
+
+ERROR: Task (virtual:native:/home/ngarinav/poky/meta/recipes-devtools/gnu-config/gnu-config_git.bb:do_fetch) failed with exit code '1'
+
+NOTE: Tasks Summary: Attempted 4 tasks of which 0 didn't need to be rerun and 1 failed.
+ 
+Summary: 1 task failed:
+
+  virtual:native:/home/ngarinav/poky/meta/recipes-devtools/gnu-config/gnu-config_git.bb:do_fetch
+
+Summary: There were 2 WARNING messages.
+
+Summary: There was 1 ERROR message, returning a non-zero exit code.
+
+ngarinav@inlen6239008810:~/poky/build/down
+ 
+git clone https://git.savannah.gnu.org/git/config.git ~/poky/build/downloads/git2/git.savannah.gnu.org.git.config.git
+
+bitbake gnu-config-native
+
+BB_NO_NETWORK = "0"
+Index of /git/config.git/
+ 
+What is an enum?
+
+An enum defines a user-defined integral type consisting of named integer constants.
+ 
+🔹 Syntax:
+
+c
+
+Copy
+
+Edit
+
+enum Color {
+
+    RED,
+
+    GREEN,
+
+    BLUE
+
+};
+
+By default:
+ 
+RED = 0
+ 
+GREEN = 1
+ 
+BLUE = 2
+ 
+You can override values:
+ 
+c
+
+Copy
+
+Edit
+
+enum Status {
+
+    SUCCESS = 0,
+
+    FAILURE = -1,
+
+    TIMEOUT = 100
+
+};
+
+You can also use typedef:
+ 
+c
+
+Copy
+
+Edit
+
+typedef enum {
+
+    OFF,
+
+    ON
+
+} PowerState;
+
+🔹 Usage Example:
+
+c
+
+Copy
+
+Edit
+
+PowerState ps = ON;
+
+if (ps == ON) {
+
+    // do something
+
+}
+
+🔹 Behind the Scenes:
+
+Enums are stored as int (typically 4 bytes).
+ 
+You can assign any integer value, even values not listed in the enum (not type-safe).
+ 
+🔹 Why use enum?
+
+Readability: Meaningful names over magic numbers.
+ 
+Maintainability: Easier to extend/modify states.
+ 
+Debugging: Better debug symbols than raw integers.
+ 
+🔹 Advanced: Enum as Bitmask (less common but possible)
+
+c
+
+Copy
+
+Edit
+
+enum Flags {
+
+    FLAG_READ = 1 << 0,
+
+    FLAG_WRITE = 1 << 1,
+
+    FLAG_EXECUTE = 1 << 2
+
+};
+
+int perms = FLAG_READ | FLAG_WRITE;
+
+🔸 union
+
+✅ What is a union?
+
+A union is a special data type where all members share the same memory location.
+ 
+🔹 Syntax:
+
+c
+
+Copy
+
+Edit
+
+union Data {
+
+    int i;
+
+    float f;
+
+    char str[20];
+
+};
+
+All fields share memory, so sizeof(union) = size of the largest member.
+ 
+🔹 Example:
+
+c
+
+Copy
+
+Edit
+
+union Data data;
+
+data.i = 10;
+
+printf("%d\n", data.i);
+ 
+data.f = 220.5;
+
+printf("%f\n", data.f);  // now data.i is likely garbage
+
+🔹 Use Cases:
+
+Memory efficiency (e.g., embedded systems).
+ 
+Type-punning (accessing the same memory as different types).
+ 
+Variant types / tagged unions (often with an enum to track type).
+ 
+🔹 Example: Tagged Union
+
+c
+
+Copy
+
+Edit
+
+typedef enum {
+
+    TYPE_INT,
+
+    TYPE_FLOAT,
+
+    TYPE_STRING
+
+} VarType;
+ 
+typedef struct {
+
+    VarType type;
+
+    union {
+
+        int i;
+
+        float f;
+
+        char str[20];
+
+    } data;
+
+} Variant;
+ 
+void print_variant(Variant v) {
+
+    switch (v.type) {
+
+        case TYPE_INT:   printf("Int: %d\n", v.data.i); break;
+
+        case TYPE_FLOAT: printf("Float: %f\n", v.data.f); break;
+
+        case TYPE_STRING:printf("String: %s\n", v.data.str); break;
+
+    }
+
+}
+
+🔍 Differences Between struct and union
+ 
+Feature	struct	union
+
+Memory	Sum of all members	Max of all members
+
+Access	All members can be used	Only one member valid at a time
+
+Use Case	Group related data	Save memory, variant types
+
+🧠 Best Practices (3 Years+ Experience Level)
+
+Use enum for state machines, error codes, protocol states, etc.
+ 
+Use union in protocol stack implementations, hardware registers, or when interfacing with raw data (bit-level).
+ 
+Use typedef enum and typedef union for cleaner code.
+ 
+Avoid writing to one union member and reading from another unless you know the architecture-specific behavior (type-punning is undefined behavior in strict C).
+ 
+🔬 Interview-level Questions
+
+Can enums have duplicate values?
+ 
+Yes, but the symbolic names must be unique.
+ 
+c
+
+Copy
+
+Edit
+
+enum {
+
+    A = 1,
+
+    B = 2,
+
+    C = 2 // valid
+
+};
+
+Can we determine which member of a union was last written?
+ 
+Not automatically. You must track it yourself using an enum or flag.
+ 
+Is reading from a union member different from the one written to undefined behavior?
+ 
+Yes, in standard C. Some compilers allow it (like GCC with -fno-strict-aliasing), but it's not portable.
+ 
+Size of union with int and char[10]?
+ 
+sizeof(union { int i; char str[10]; }) = 10 (not 14), due to shared memory.
+ 
+FUNCTIONS:
+ 
+ 
+#include<stdio.h>
+
+int max(int a, int b);
+
+int main()
+
+{
+
+    int a=98;
+
+    int b=78;
+
+    int res=max(a,b);
+
+    printf ("result is %d\n",res);
+
+}
+
+int max(int a,int b)
+
+{
+
+    int result;
+
+    if(a>b)
+
+    {
+
+        result=a;
+
+    }
+
+    else
+
+    {
+
+    result=b;
+
+    }
+
+    return result;
+
+}
+ 
+GO
+ 
+hlo
+ 
+runqemu qemux86-64 core-image-minimal
+
+runqemu - INFO - Running MACHINE=qemux86-64 bitbake -e ...
+
+runqemu - ERROR - /home/ngarinav/build/tmp/deploy/images/qemux86-64 not a directory valid DEPLOY_DIR_IMAGE
+
+runqemu - ERROR - Failed to find /home/ngarinav/build/tmp/deploy/images/qemux86-64/core-image-minimal-qemux86-64.qemuboot.conf (wrong image name or BSP does not support running under qemu?).
+
+runqemu - INFO - Cleaning up
+
+runqemu - INFO - Host uptime: 575.99
+ 
+ngarinav@inlen6239008810:~/poky/scripts$ runqemu qemux86-64
+
+runqemu - INFO - Running MACHINE=qemux86-64 bitbake -e ...
+
+runqemu - ERROR - /home/ngarinav/build/tmp/deploy/images/qemux86-64 not a directory valid DEPLOY_DIR_IMAGE
+
+ls: cannot access '/home/ngarinav/build/tmp/deploy/images/qemux86-64/*.qemuboot.conf': No such file or directory
+
+runqemu - ERROR - Command 'ls -t /home/ngarinav/build/tmp/deploy/images/qemux86-64/*.qemuboot.conf' returned non-zero exit status 2.
+
+runqemu - INFO - Cleaning up
+
+runqemu - INFO - Host uptime: 635.28
+ 
+ngarinav@inlen6239008810:~/poky/scripts$ runqemu qemux86
+
+runqemu - INFO - Running MACHINE=qemux86 bitbake -e ...
+
+runqemu - ERROR - /home/ngarinav/build/tmp/deploy/images/qemux86 not a directory valid DEPLOY_DIR_IMAGE
+
+ls: cannot access '/home/ngarinav/build/tmp/deploy/images/qemux86/*.qemuboot.conf': No such file or directory
+
+runqemu - ERROR - Command 'ls -t /home/ngarinav/build/tmp/deploy/images/qemux86/*.qemuboot.conf' returned non-zero exit status 2.
+
+runqemu - INFO - Cleaning up
+
+runqemu - INFO - Host uptime: 649.35
+ 
+ngarinav@inlen6239008810:~/poky/scripts$
+ 
+#include<stdio.h>
+
+int max(int *arr,int length);
+
+int main()
+
+{
+
+    int arr[]={11,22,33,23,153},length;
+
+    length=sizeof(arr)/sizeof arr[0];
+
+    printf("length is %d\n",length);
+
+    int max1= max(arr,length);
+
+    printf("min is %d",max1);
+
+}
+
+int max(int *arr,int length)
+
+{
+
+    int min=*arr;
+
+    for(int i=0;i<length;i++)
+
+    {
+
+        if(*arr<min)
+
+        min=*arr;
+
+        *arr--;
+
+    }
+
+    return max;
+
+}
+
+ 
+#include<stdio.h>
+
+int max(int *arr,int length);
+
+int main()
+
+{
+
+    int arr[]={11,22,33,23,153},length;
+
+    length=sizeof(arr)/sizeof arr[0];
+
+    printf("length is %d\n",length);
+
+    int max1= max(arr,length);
+
+    printf("min is %d",max1);
+
+}
+
+int max(int *arr,int length)
+
+{
+
+    int max=*arr;
+
+    for(int i=0;i<length;i++)
+
+    {
+
+        if(arr[i]>max)
+
+        max=arr[i];
+
+    }
+
+    return max;
+
+}
+
+ 
+#include<stdio.h>
+
+int max(int *arr,int length);
+
+int main()
+
+{
+
+    int arr[]={11,22,33,23,153},length;
+
+    length=sizeof(arr)/sizeof arr[0];
+
+    printf("length is %d\n",length);
+
+    int max1= max(arr,length);
+
+    printf("min is %d",max1);
+
+}
+
+int max(int *arr,int length)
+
+{
+
+    int min=*arr;
+
+    for(int i=0;i<length;i++)
+
+    {
+
+        if(arr[i]<min)
+
+        min=arr[i];
+
+    }
+
+    return min;
+
+}
+
+ 
+#include<stdio.h>
+
+int min (int*arr, int length);
+
+int main()
+
+{
+
+    int arr[]={190,23,456,45,32},length;
+
+    length=sizeof(arr)/sizeof(arr[0]);
+
+    printf("length is %d\n",length);
+
+    int min_num=(arr,length);
+
+    printf("Minimum number from array is %d\n",min_num);
+
+    return 0;
+
+}
+
+int min (int *arr,int length)
+
+{
+
+    int min1=*arr;
+
+    for(int i=0;i<length;i++)
+
+    {
+
+        if(arr[i]<min1)
+
+        min1=arr[i];
+
+    }
+
+    return min1;
+
+}
+ 
+https://www.resume-now.com/build-resume/section/cntc
+Resume Builder
+ 
+write a c program to get the output as 0x12345678 using bitwise operators and mask
+ 
+https://embetronicx.com/embedded-interview-topics/
+ 

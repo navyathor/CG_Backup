@@ -1,0 +1,149 @@
+**********************Reverse a string**********************
+void reverse(char *str) {
+    int i = 0, j = strlen(str) - 1;
+    while (i < j) {
+        char temp = str[i];
+        str[i++] = str[j];
+        str[j--] = temp;
+    }
+}
+********************************************************
+void reverse(char *str, int start, int end) {
+    if (start >= end) return;
+    char temp = str[start];
+    str[start] = str[end];
+    str[end] = temp;
+    reverse(str, start + 1, end - 1);
+}
+************************************************************
+#include <stack>
+void reverse(char *str) {
+    stack<char> s;
+    for (int i = 0; str[i]; i++) s.push(str[i]);
+    for (int i = 0; str[i]; i++) {
+        str[i] = s.top();
+        s.pop();
+    }
+}
+******************************************************************
+str[i] ^= str[j];
+str[j] ^= str[i];
+str[i] ^= str[j];
+***********************unique_elemnts****************************
+#include<stdio.h>
+int main()
+{
+    int arr[]={1,2,3,4,5,6,7,8,9,8,7,6,4};
+    int i,j,n,isunique;
+    n=sizeof(arr)/sizeof(arr[0]);
+    for(i=0;i<n;i++)
+    {
+        isunique=1;
+        for(j=0;j<n;j++)
+        {
+            if(i!=j && arr[i]==arr[j])
+            {
+                isunique=0;
+                break;
+            }
+        }
+        if(isunique)
+        {
+            printf("%d",arr[i]);
+        }
+    }
+    return 0;
+}
+***************************Unique elemnets in char array***********************
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char arr[]="PUSHPA LATHA";
+    int i,j,n,isunique;
+    n=strlen(arr);
+    for(i=0;i<n;i++)
+    {
+        isunique=1;
+            for(j=0;j<n;j++)
+            {
+                if(i!=j && arr[i]==arr[j])
+                {
+                    isunique=0;
+                    break;
+                }
+
+                }
+
+
+   if(isunique)
+    {
+    printf("%c",arr[i]);
+    }
+    }
+   return 0;
+}
+
+**********************************removing duplicate elemnts********************
+#include<stdio.h>
+int main()
+{
+    int arr[]={1,2,3,3,4,4,5,5,6,6,7},i,j,k,n;
+    n=sizeof(arr)/sizeof(arr[0]);
+    for(int i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;)
+        {
+            if(arr[i]==arr[j])
+            {
+               for(k=j;k<n;k++)
+               {
+                   arr[k]=arr[k+1];
+               }
+               n--;
+            }
+            else
+                j++;
+
+        }
+
+    }
+    printf("After removing duplicate elements\n");
+    for(int i=0;i<n;i++)
+    {
+        printf("%d",arr[i]);
+    }
+    return 0;
+}
+****************************************removing duplicate characters from char array*******************
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+    char arr[100]="NAVYA ROYAL";
+    int n,i,j,k;
+    n=strlen(arr);
+    for(i=0;i<n;i++)
+    {
+        for(j=i+1;j<n;)
+        {
+            if(arr[i]==arr[j])
+            {
+                for(k=j;k<n-1;k++)
+                {
+                    arr[k]=arr[k+1];
+                }
+                n--;
+            }
+            else
+                j++;
+        }
+
+    }
+    for(int i=0;i<n;i++)
+    {
+       printf("%c",arr[i]);
+    }
+   return 0;
+}
+**************************************************************************************************
