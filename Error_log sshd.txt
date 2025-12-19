@@ -1,0 +1,42 @@
+[INFO] Generating workspace directory
+INFO: bitbake petalinux-image-minimal
+NOTE: Started PRServer with DBfile: /home/labadmin/vikash/xilinx-zcu670-2022.1/build/cache/prserv.sqlite3, Address: 127.0.0.1:43205, PID: 681377
+Loading cache: 100% |###############################################################################| Time: 0:00:02
+Loaded 5402 entries from dependency cache.
+Parsing recipes: 100% |#############################################################################| Time: 0:00:00
+Parsing of 3612 .bb files complete (3593 cached, 19 parsed). 5419 targets, 498 skipped, 0 masked, 0 errors.
+WARNING: No recipes in default available for:
+  /home/labadmin/vikash/xilinx-zcu670-2022.1/project-spec/meta-user/recipes-bsp/fsbl-firmware/fsbl-firmware_2021.2.bbappend
+NOTE: Resolving any missing task queue dependencies
+Initialising tasks: 100% |##########################################################################| Time: 0:00:03
+Checking sstate mirror object availability: 100% |##################################################| Time: 0:00:45
+Sstate summary: Wanted 592 Local 25 Network 348 Missed 219 Current 1465 (63% match, 89% complete)
+Removing 23 stale sstate objects for arch xilinx_zcu670: 100% |#####################################| Time: 0:00:00
+NOTE: Executing Tasks
+ERROR: petalinux-image-minimal-1.0-r0 do_rootfs: Could not invoke dnf. Command '/home/labadmin/vikash/xilinx-zcu670-2022.1/build/tmp/work/xilinx_zcu670-xilinx-linux/petalinux-image-minimal/1.0-r0/recipe-sysroot-native/usr/bin/dnf -v --rpmverbosity=info -y -c /home/labadmin/vikash/xilinx-zcu670-2022.1/build/tmp/work/xilinx_zcu670-xilinx-linux/petalinux-image-minimal/1.0-r0/rootfs/etc/dnf/dnf.conf --setopt=reposdir=/home/labadmin/vikash/xilinx-zcu670-2022.1/build/tmp/work/xilinx_zcu670-xilinx-linux/petalinux-image-minimal/1.0-r0/rootfs/etc/yum.repos.d --installroot=/home/labadmin/vikash/xilinx-zcu670-2022.1/build/tmp/work/xilinx_zcu670-xilinx-linux/petalinux-image-minimal/1.0-r0/rootfs --setopt=logdir=/home/labadmin/vikash/xilinx-zcu670-2022.1/build/tmp/work/xilinx_zcu670-xilinx-linux/petalinux-image-minimal/1.0-r0/temp --repofrompath=oe-repo,/home/labadmin/vikash/xilinx-zcu670-2022.1/build/tmp/work/xilinx_zcu670-xilinx-linux/petalinux-image-minimal/1.0-r0/oe-rootfs-repo -x sysvinit --nogpgcheck install bridge-utils can-utils config-8a34001 config-si5381 config-xorif dfeccf dfeequ dfemix dfeprach e2fsprogs-mke2fs fmt fpga-manager-script haveged hellopm iproute2 iproute2-ss kernel-modules lbmd libdfx libmetal libxorif mtd-utils myapp netcat netcat-dbg netcat-dev nfs-utils openssh-sshd oran-system-init oun-main packagegroup-core-boot packagegroup-core-ssh-dropbear pciutils python3 python3-cffi python3-pyro4 rfclk rfdc rfdc-read-write rfdc-selftest run-postinsts si5381-init spdlog sudo tcf-agent tcpdump u-boot-tools udev-extraconf watchdog-init xorif-app xran-sync-api' returned 1:
+DNF version: 4.8.0
+cachedir: /home/labadmin/vikash/xilinx-zcu670-2022.1/build/tmp/work/xilinx_zcu670-xilinx-linux/petalinux-image-minimal/1.0-r0/rootfs/var/cache/dnf
+Added oe-repo repo from /home/labadmin/vikash/xilinx-zcu670-2022.1/build/tmp/work/xilinx_zcu670-xilinx-linux/petalinux-image-minimal/1.0-r0/oe-rootfs-repo
+User-Agent: falling back to 'libdnf': could not detect OS or basearch
+repo: using cache for: oe-repo
+oe-repo: using metadata from Mon 05 Dec 2022 04:50:59 AM UTC.
+Last metadata expiration check: 0:00:01 ago on Mon 05 Dec 2022 04:50:59 AM UTC.
+Excludes in dnf.conf: sysvinit
+--> Starting dependency resolution
+--> Finished dependency resolution
+Error:
+ Problem: package packagegroup-core-ssh-dropbear-1.0-r1.0.noarch requires dropbear, but none of the providers can be installed
+  - package dropbear-2020.81-r0.0.cortexa72_cortexa53 conflicts with openssh-sshd provided by openssh-sshd-8.7p1-r0.0.cortexa72_cortexa53
+  - package openssh-sshd-8.7p1-r0.0.cortexa72_cortexa53 conflicts with dropbear provided by dropbear-2020.81-r0.0.cortexa72_cortexa53
+  - conflicting requests
+(try to add '--allowerasing' to command line to replace conflicting packages or '--skip-broken' to skip uninstallable packages)
+
+ERROR: Logfile of failure stored in: /home/labadmin/vikash/xilinx-zcu670-2022.1/build/tmp/work/xilinx_zcu670-xilinx-linux/petalinux-image-minimal/1.0-r0/temp/log.do_rootfs.682570
+ERROR: Task (/home/labadmin/vikash/xilinx-zcu670-2022.1/components/yocto/layers/meta-petalinux/recipes-core/images/petalinux-image-minimal.bb:do_rootfs) failed with exit code '1'
+NOTE: Tasks Summary: Attempted 5088 tasks of which 5074 didn't need to be rerun and 1 failed.
+
+Summary: 1 task failed:
+  /home/labadmin/vikash/xilinx-zcu670-2022.1/components/yocto/layers/meta-petalinux/recipes-core/images/petalinux-image-minimal.bb:do_rootfs
+Summary: There was 1 WARNING message shown.
+Summary: There was 1 ERROR message shown, returning a non-zero exit code.
+ERROR: Failed to build project. Check the /home/labadmin/vikash/xilinx-zcu670-2022.1/build/build.log file for more details...

@@ -1,0 +1,73 @@
+                              ADD USERS TO THE PETALINUX SYSTEM:
+
+
+ │
+  │ Provide the userid and passwd with separation of ':' and provide multiple userid's with separation of ';'.   │
+  │                                                                                                              │
+  │ Examples:                                                                                                    │
+  │  root:passwd                       --> Update the root passwd when debug-tweeks enabled.                     │
+  │  user1:passwd1; or user1:passwd1   --> Add passwd1 for the user1                                             │
+  │  user1:                            --> Add empty passwd for the user1                                        │
+  │  user1:passwd1;user2:passwd2;      --> Add user1 and user2 with the passwd1 and passwd2                      │
+  │  user1:;user2:passwd2              --> Add empty passwd for user1 and passwd2 for user2                      │
+  │  user1:passwd1:passwd-expire       --> The passwd1 for user1 will expire on the frist login and              │
+  │                                        user should enter the new passwd.                                     │
+  │  user1::passwd-expire;             --> This sets the empty passwd for user1.On the frist login               │
+  │                                        user should enter the new passwd.                                     │
+  │                                                                                                              │
+  │ Symbol: ADD_EXTRA_USERS [=root:root;petalinux::passwd-expire;]                                               │
+  │ Type  : string                                                                                               │
+  │ Prompt: Add Extra Users                                                                                      │
+  │   Location:                                                                                                  │
+  │     -> PetaLinux RootFS Settings                                                                             │
+  │   Defined at /home/labadmin/vikash/xilinx-zcu670-2022.1/build/misc/rootfs_config/Kconfig:9578                │
+
+
+CONFIG_ADD_USERS_TO_GROUPS:                                                                                  │
+  │                                                                                                              │
+  │ Add specific users to the Groups                                                                             │
+  │ Provide the userid and groups with separation of ':',provide groups with separation of ',' and               │
+  │ provide multiple userid's with separation of ';'.                                                            │
+  │                                                                                                              │
+  │ Example:                                                                                                     │
+  │   user1:audio,video;user2:audio,video,disk --> Add user1 to audio,video groups and                           │
+  │                                                user2 to audio,video,disk groups.                             │
+  │                                                                                                              │
+  │ Symbol: ADD_USERS_TO_GROUPS [=petalinux:audio,video;]                                                        │
+  │ Type  : string                                                                                               │
+  │ Prompt: Add Users to Groups                                                                                  │
+  │   Location:                                                                                                  │
+  │     -> PetaLinux RootFS Settings                                                                             │
+  │   Defined at /home/labadmin/vikash/xilinx-zcu670-2022.1/build/misc/rootfs_config/Kconfig:9595                │
+  │                                                                                                              │
+  
+─── Add Users to Sudo users ───────────────────────────────────────────┐
+  │ CONFIG_ADD_USERS_TO_SUDOERS:                                                                                 │
+  │                                                                                                              │
+  │ Specify the users with space that needs to be added to sudo users.                                           │
+  │ Example: user1 user2                                                                                         │
+  │                                                                                                              │
+  │ Symbol: ADD_USERS_TO_SUDOERS [=petalinux]                                                                    │
+  │ Type  : string                                                                                               │
+  │ Prompt: Add Users to Sudo users                                                                              │
+  │   Location:                                                                                                  │
+  │     -> PetaLinux RootFS Settings                                                                             │
+  │   Defined at /home/labadmin/vikash/xilinx-zcu670-2022.1/build/misc/rootfs_config/Kconfig:9606                │
+  │                                                                                                              │
+  │                                                                                                              │
+  │                                                                                                              │
+  │           we can add password                                                        
+  You can make the changes using the following steps:
+Go to project: petalinux-config -c rootfs > PetaLinux Rootfs Settings > Add extra users
+Provide the users. To add extra users to the PetaLinux system, provide the user ID (userid) and password (passwd) separated by :; for multiple users, separate sets of user IDs and passwords using ;.
+Examples:
+
+To add a passwd1 for user1:
+
+user1:passwd1; or user1:passwd1
+To add an empty passwd for the user1:
+
+user1:
+To add user1 and user2 with passwd1 and passwd2, respectively:
+
+user1:passwd1;user2:passwd2;
