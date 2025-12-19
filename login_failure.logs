@@ -1,0 +1,17 @@
+Nov 19 17:44:20 xilinx-zcu670-20221 authpriv.notice dropbear[701]: pam_unix(dropbear:auth): check pass; user unknow
+Nov 19 17:44:20 xilinx-zcu670-20221 authpriv.notice dropbear[701]: pam_unix(dropbear:auth): authentication failure;
+Nov 19 17:44:21 xilinx-zcu670-20221 authpriv.warn dropbear[701]: pam_authenticate() failed, rc=7, Authentication fa
+Nov 19 17:44:21 xilinx-zcu670-20221 authpriv.warn dropbear[701]: Bad PAM password attempt for '<invalid username>'
+Nov 19 17:45:05 xilinx-zcu670-20221 authpriv.notice dropbear[701]: pam_unix(dropbear:auth): check pass; user unknow
+Nov 19 17:45:05 xilinx-zcu670-20221 authpriv.notice dropbear[701]: pam_unix(dropbear:auth): authentication failure;
+Nov 19 17:45:07 xilinx-zcu670-20221 authpriv.warn dropbear[701]: pam_authenticate() failed, rc=7, Authentication fa
+Nov 19 17:45:07 xilinx-zcu670-20221 authpriv.warn dropbear[701]: Bad PAM password attempt for '<invalid username>'
+Nov 19 17:45:10 xilinx-zcu670-20221 authpriv.notice dropbear[701]: pam_unix(dropbear:auth): check pass; user unknow
+Nov 19 17:45:10 xilinx-zcu670-20221 authpriv.notice dropbear[701]: pam_unix(dropbear:auth): authentication failure;
+Nov 19 17:45:11 xilinx-zcu670-20221 authpriv.warn dropbear[701]: pam_authenticate() failed, rc=7, Authentication fa
+Nov 19 17:45:11 xilinx-zcu670-20221 authpriv.warn dropbear[701]: Bad PAM password attempt for '<invalid username>'
+Nov 19 17:45:12 xilinx-zcu670-20221 authpriv.info dropbear[701]: Exit before auth from <::ffff:192.168.1.2:45816>:
+Nov 19 17:46:39 xilinx-zcu670-20221 authpriv.info dropbear[712]: Child connection from ::ffff:192.168.1.2:47036
+Nov 19 17:46:39 xilinx-zcu670-20221 authpriv.notice dropbear[712]: Auth succeeded with blank password for 'root' fr
+Nov 19 17:47:43 xilinx-zcu670-20221 authpriv.info dropbear[712]: Exit (root) from <::ffff:192.168.1.2:47036>: Disco
+

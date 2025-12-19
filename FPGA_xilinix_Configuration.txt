@@ -1,0 +1,99 @@
+duc downnlink
+ddc - uplink
+
+(/sys/bus/platform/device)
+Functions
+
+1.xdfe_cc_mixer_v1_0_get_version
+Gets the version of library.
+
+2.xdfe_cc_mixer_v1_0_default_config
+Gets default configuration structures.
+
+3.xdfe_cc_mixer_v1_0_default_ant_cfg
+Gets default antenna configuration structures.
+
+4.xdfe_cc_mixer_v1_0_create
+Gets default antenna configuration structures
+
+5.xdfe_cc_mixer_v1_0_reset
+Resets an instance of the core.
+
+6.xdfe_cc_mixer_v1_0_calc_freq_config
+Calculates NCO frequency configuration
+
+7.xdfe_cc_mixer_v1_0_set_ant_cfg
+Sets antenna configuration.
+
+8.xdfe_cc_mixer_v1_0_update_ant_cfg
+Updates an ant_cfg struct to reflect state of the mixer.
+
+9.xdfe_cc_mixer_v1_0_cc_move_nco_update
+Updates the relevant NCO to facilitate an NCO move.
+
+10.xdfe_cc_mixer_v1_0_get_status
+Gets status, overflow cleared on read.
+
+11.xdfe_cc_mixer_v1_0_do
+Mix and rate change the supplied data.
+
+12.xdfe_cc_mixer_v1_0_destroy
+Destroys model instance and free any resources allocated
+
+
+Structures::
+-------------------
+1.xdfe_cc_mixer_v1_0_config
+2.xdfe_cc_mixer_v1_0_frequency
+3.xdfe_cc_mixer_v1_0_phase
+4.xdfe_cc_mixer_v1_9_nco
+5.xdfe_cc_mixer_v1_0_cc_cfg
+6.xdfe_cc_mixer_v1_0_ant_cfg
+7.xdfe_cc_mixer_v1_0_cc_status
+8.xdfe_cc_mixer_v1_0_status
+
+
+Mode :
+----------
+• 0= IMMEDIATE: Applies the value of STATE_OUTPUT immediatetly
+the register is written.
+• 1 = TUSER_SINGLE_SHOT: Applies the value of STATE_OUTPUT once
+when the TUSER_EDGE_LEVEL condition is satisfied.
+• 2 = TUSER_CONTINUOUS: Applies the value of STATE_OUTPUT
+continually when TUSER_EDGE_LEVEL condition is satisfied.
+• 3 = RESERVED: Reserved - will default to 0 behaviour
+
+
+TriggerEnable::
+-----------------------
+[0,1], Enable Trigger:
+• 0 = DISABLED: Trigger Pulse and State outputs are disabled.
+• 1 = ENABLED: Trigger Pulse and State outputs are enabled and follow
+the settings described below
+
+TuserEdgeLevel::
+------------------------
+[0-3], Specify either Edge or Level of the TUSER input as the source
+condition of the trigger.
+Difference between Level and Edge is Level will generate a trigger
+immediately the TUSER level is detected. Edge will ensure a TUSER
+transition has come first:
+• 0 = LOW: Trigger occurs immediately after a low-level is seen on
+TUSER provided tvalid is high.
+• 1 = HIGH: Trigger occurs immediately after a high-level is seen on
+TUSER provided tvalid is high.
+• 2 = FALLING: Trigger occurs immediately after a high to low
+transition on TUSER provided tvalid is high.
+• 3 = RISING: Trigger occurs immediately
+
+StateOutput::
+-------------------
+[0,1], Specify the State output value:
+• 0 = DISABLED: Place the State output into the Disabled state.
+• 1 = ENABLED: Place the State output into the Enabled state.
+
+TUSERBit::
+-------------------
+[0-255], Specify which DIN TUSER bit to use as the source for the trigger
+when MODE = 1 or 2.
+

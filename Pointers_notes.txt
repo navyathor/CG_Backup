@@ -1,0 +1,65 @@
+adress "&" will give adress of variable
+*(&i); will give value of variable
+j = &i; we need to declare it as int *j;
+"*" :what it indicates 
+It indicates value at adress
+the value at adress contained in j is int type
+
+
+#include <stdio.h>
+
+int main()
+{
+    int i=5;
+    int *j;
+    j=& i;
+    printf("Adress of i is %u\n",&i);
+    printf("adress of i is %u",j);
+    return 0;
+}
+
+o/p:
+
+Adress of i is 2016568268
+adress of i is 2016568268
+
+
+
+
+#include <stdio.h>
+
+int main()
+{
+    int i=3;
+    int *j;
+    j=&i;
+    printf("adress of i is %u\n",&i);
+    printf("adress of i is %u\n",j);
+    printf("adress of j is %u\n",&j);
+    printf("value of i is %u\n",i);
+    printf("value of i is %u\n",*j);
+    printf("adress of i is %u\n",*(&i));
+    return 0;
+}
+
+output:
+adress of i is 1018348348
+adress of i is 1018348348
+adress of j is 1018348352
+value of i is 3
+value of i is 3
+adress of i is 3
+
+
+* alpha - It is a POINTER VARIABLE
+variables capable of holding adresses.
+
+adresses are always whole numbers.
+pointers always contain whole numbers.
+
+
+float*s;
+it doesn't mean s is going to have floating value.
+it actually means s is going to have adress of floating point value.
+char *ch means ch going to have the adress of char value.
+

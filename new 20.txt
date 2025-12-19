@@ -1,0 +1,5 @@
+root@ounas-modem-main-8t8r-trxpsu-ev2:/usr/bin# ./adduser
+/usr/bin/perl: line 5: /usr/bin/perl.real: cannot execute binary file: Exec format error
+/usr/bin/perl: line 5: /usr/bin/perl.real: Success
+root@ounas-modem-main-8t8r-trxpsu-ev2:/usr/bin#
+
