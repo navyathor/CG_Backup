@@ -1,0 +1,567 @@
+****************************L&T Interview questions*****************************
+1.Self-Intro
+2.Explain about projects.
+3.programming question input1234512345234512345 output:12345 basically removing duplicate elemnets in an int array
+4.Input:hellow hellow world, output
+5.input 0X1234 O/P:0X2143
+6.Also asked to explain programs.
+7.Can you define static variable
+8.Can you explain Memory layout.
+9.compilation stages of c program.
+10.what is function pointer
+11. Difference between Union and structure?
+12. what is Dangling pointer?
+13.what is void pointer?
+14.what is difference between malloc and calloc?
+15.what is bitfields?
+16.what is virtual memory?
+17. can we read the address of a register variable?
+18. what is virtual memory?
+19. syntax of function pointer?
+20. structure size int a char b int c ?
+21. Difference between process and thread?
+22. what is mutex and semaphore?
+23. What is Interrupt handler?
+24. what is command to load module dynamically?
+25. How you will collect the logs?
+26. If kernel panic or kernel crash occurs how you debug the issue?
+27. what is paging?
+28.Can you write a linked list program?
+29. Difference between union and structure
+ 
+ 
+ 
+ 
+Kernel compilation?
+install pre-requisites tools
+download kernel source
+configure kernel make menu config *
+compile kernel
+install modules
+install kernel
+reboot
+ 
+****************************************TCS Interview questions*****************************
+1. Explain current Project UEFI & Technologies used?
+2. How do you compile kernel in os?
+3. what are kernel modules?
+4. How do you read/write from i2c ?
+5. Differentiate between kernel and device drivers?
+6. difference between i2c & SPI?
+7. Can modules be inserted other than insmod mod probe ?
+ANS: STATIC AND dynamic methods clearly
+8. simple char driver program
+9. simple init and exit functions()?
+10. Make compiler Toll chain?
+11. without a device can we write a device driver to an application?
+ 
+Programming questions:
+1> c program to find power of 2 or not?
+2> c program to reverse a string?
+ 
+*******************************************sravanthi questions********************************
+1. Take a input string and print maxmimum times repeated char in an string?
+2. Take a input string and print miniimum times repeated char in an string?
+3. Take a input string and print frequency of each char in an string?
+4. string palindrome or not
+ 
+*******************************************SWARNA INTERVIEW QUESTIONS**************************
+1. c program to reverse a string? 2 strings comparing explaination?
+2. Difference between pointers and function pointers?
+2. Do add and subtract two functions using function pointers?
+4. What is process and address space with examples?
+5. where function calls stored?
+6. int a[10]="abc" It is inside function what will happen?
+where it a[10] stored?
+7. Check 2 single linked list compare both are equal or not?
+struct node?head1 1,2,3 head2 1,2,3,4? output NOT EQUAL? Good explaination?
+8. Mutex semaphore advantages & disadvantages?
+9. Thread vs process explain ?
+10. pthread_join means?
+11. critical section?
+12. Difference Between i2c spi which is better?
+13 UART?
+14 MQTT TCP/IP?
+**************************************KANNA_L&T 2ND************************************
+1. Reverse a string without using strerev?
+2. Implement strlen() using pointers?
+3. chek if a num is power of 2 or not?
+4. Find Fabinocci series and factorial using recursion?
+5. swap 2 variables without using temp?
+6. Reverse a number?
+7. Palindrome(string/number)
+8. Memory allocation using malloc/calloc and free?
+9. Remove duplicate characters from a string ?
+10. Count no of 1s and 0s in Binary num?
+11. Toggle,set clear, bits?
+12 Find Missing number in an array 1 to N?
+13 Endianness Check?
+14 string compare without strcmp()?
+15. pointer to func using example?
+ 
+Embedd /RTOS
+ 
+1. What is volatile keyword? Give use case?
+2. const and #define difference?
+3. What happens when you dereference a NULL pointer?
+4. Difference between static and global variables?
+5. What is ISR? can we print in ISR?
+6. How to handle priority inversion?
+7. Explain memory layout of C ?
+ 
+Embedded Linux
+ 
+What is a device tree why it is used?
+what is u-Boot? what are its roles?
+Difference between loadable module and built in driver?
+How do you debug kernel panic?
+How to check boot log in Linux ? //using dmesg
+What are major and minor numbers in C?
+what is mmap and where it is used?
+Explain Linux boot process?
+what is procfs and sysfs?
+How do you write simple char driver?steps involved?
+****************************************L&T 2nd_round*********************************************
+1. C program to print unique numbers in a given array?
+2. Depends vs Rdepends in yocto?
+3. Rev in yocto?
+4. what is the purpose of yocto? why we use?
+5. How to write driver in simple?
+6. How drivers are detected?
+7. what is dts?
+8. Device tree nodes?
+9. Major and minor number?
+10. What is probe function and when it is used?
+11. Storage classes in C?
+12. what are inline functions?
+13. what is strcture?
+14. what is structure padding?
+15. Linux internals?
+16. uart vs i2c vs spi where exactly each interface used?
+17. How a device driver written explain?
+18. How we will read this and what will be size and what is the difference among them? explain?
+int a[10]
+int *a[10]
+int **a;
+int (*a)[10]
+int(*a)(int a,int b)
+ 
+ANS:
+ 
+Declaration        Meaning Size (64-bit)          Notes
+int a[10]         Array of 10 ints         40 bytes      Fixed-size array
+int *a[10]         Array of 10 int pointers 80 bytes      Each points to an int
+int **a                 Pointer to pointer to int 8 bytes              Dynamic 2D arrays
+int (*a)[10]         Pointer to array of 10 ints 8 bytes              Used in 2D array functions
+int (*a)(int, int) Pointer to function         8 bytes              Function callback
+ 
+******************************************mindtek***************************************
+How will you verify how many interrupts triggered ?
+How many cpu's  it will show?
+what is kernel timer?
+How memory is managed in kernel?
+How can you create /dev for device driver?
+Example of software Interrupt? what it is?
+ipc mechanisms?
+can you explain char driver for ADC ?
+WHO IS RESPONSIBLE FOR IOCTL() DRIVER?
+SYSTEM CALL?
+How i2c works?
+structure padding? what exactly benefit using of it?
+how you set a bit?
+what is kernel panic?
+when it happens?
+Is segmentation fault and kernel crash related?
+why will segmentation faults happen?
+If you want to install third party  package what you will do?
+what is dbus?
+how memory is managed in kernel?
+Where the keys are burned or stored UEFI?
+Bootloader?
+**************************************SWARNA******************************************************
+********************************TATA ELXSI - On July 12, 2024 6.30pm-6.59pm************
+ 
+ 
+Introduce Yourself
+what is meant by low level drivers
+Application level what you have developed using device drivers
+what are all different wifi modes
+explain about mechanism of BLE
+tell me about mqtt and what it is publish/subscribe or server/client
+explain about I2C and SPI
+write c program for decimal to binary
+ 
+*********************qualcomm-not attened nov 7 2024 4.30-530**************************************
+ 
+Valiant Communication Limited - On 6th Dec 2024
+1. Asked fully whether what and all worked whther you know or not on I2C, RTOS, SPI , Linux
+2. what library functions used in wifi in inux
+3. How to set the bits
+ 
+**************************L&T -On Jan 8 2025 2pm-2.30pm***********************************************
+ 
+Introduce yourself
+1.Tell me about all your projects indetail
+2.Expvlain about TCP protocol
+3.What about wireshark how the ethernet packets captured
+4.float abc = 12.34;
+char* x = (char*)&abc;
+printf("%d",*(char*)x;
+what is the content x having
+5.struct abc
+{
+char a;
+unsigned short b;
+float c; };
+size of this struct
+6.unsigned int date = 0x080107E9;
+void extractDate(unsigned int date) {
+printf("%d-%d-%d",...); }
+output 08-01-2025 c program
+7.are you ok with pune location?
+ 
+**********************************rotark april 15 3-4pm*********************************************
+ 
+1. Introduce yourself
+2. What do you know about rotark
+3. Explain about your education and wht grades
+4. Why you want to shift the company
+5. Tell me about enum and union different
+6. Program to write fibanacci series using recursion
+7. define macro with
+8. enum declaration
+9. will able move
+10. Difference between i2c and spi
+11. In main function if varibale declare where it will store
+12.day to day activities
+ 
+*****************************Tantragyaan may 14th 5-530pm************************************
+1. Introduction
+2. Mqtt tell me
+3. Why we are going through mqtt why not http
+4. Your role in the relayr projects
+5. Communication between junction box and gateway
+6. why do you want to change the company
+7. tell me about your education
+8. communication b/w junction box and sensor nodes
+9. why you are using the gateway why cant directly send the data from the junction box
+10. tell me baout tcp why we are using
+11. inbuilt wfi are you wrote code for that
+ 
+*******************************Tantragyaa 2nd round*********************************************
+1. how was previous interview
+2. went well means what
+3. tell me about projeacts indetail
+4. wrote code for spi read and send
+5. reliable and scalable means
+6. communication protocols
+ 
+ 
+*******************************Comcast 10-07 5.30pm tp 6.30pm************************************
+ 
+1. introduction
+2. explain mqtt, git
+3. i2c,spi.uart comparision
+4. wirehsark
+5. putty
+6. write c code for compare two strings
+7. pointer and function pointer difference and write code
+8. add and substract two function using function pointer
+9. memory layout show me in code
+10. check the two single linked list are same or different
+11. show me thread process in code
+ 
+ 
+********************************comcast 16-07-2025 4-5PM*****************************************
+ 
+1.Introduction
+2.Projects Explanation
+3.Rs485 to Rs 232 communication
+4.OS Concepts(thread, mutex,semaphore,binary counter)
+5.Linked List
+6.c++ inheritance
+7 perosnal detaisl
+8.write x is max value
+my array is not over flow in c code
+9. temperature sonsor , readin into the array ,array size is fixed
+how will avoid in the over flow */
+ 
+************************************HCL************************************************************
+ 
+1. write cyclic linked list code in online compiler
+2. write single linkedlist code inserting 10000 nodes
+3. what is thread
+4. what is signaling mechanism
+5. which operating system used
+ 
+ 
+***************************************************************************************************************
+1st round mirafra: input1 1100,inpu2 1111---0/p last 2 digits of input 2 swapped with last 2 digits of input1**
+***************************************************************************************************************
+2nd round mirafra
+************************Input char stiring: o/p Int value**********************************************
+#include <stdio.h>
+
+int str_to_int(const char *str) {
+    int i = 0, num = 0, sign = 1;
+ 
+    // Check for sign
+    if (str[0] == '-') {
+        sign = -1;
+        i = 1;
+    } else if (str[0] == '+') {
+        i = 1;
+    }
+
+    // Convert characters to integer
+    for (; str[i] != '\0'; i++) {
+        num = num * 10 + (str[i] - '0');
+    }
+
+    printf("sign = %d\n", sign);
+    printf("num = %d\n", num);
+
+    return sign * num;
+}
+
+int main() {
+    char str[20];
+    printf("Enter a number string: ");
+    scanf("%s", str);
+
+    int result = str_to_int(str);
+    printf("Output: %d\n", result);
+
+    return 0;
+}
+
+
+
+O/p: Input: "123" → sign = 1 → num = 123 → Output: 123 Input: "-45"
+******************************************************************************
+1. static function vs non static
+2. virtual memory in detail
+3. what is page fault
+4. thread vs process
+5. binary semaphore vs mutex
+6. copy_to_write
+7. in how many methods processes will be created
+8. fork explain
+
+********************************Fybues1st********************************
+1st round:
+
+1. Boot procedure in deapth
+2. Secureboot in detail 
+3. TFTP boot
+4. secureboot mode boot flow
+5. Timer code to print a message for every 1 sec
+*********************************NVENT*****************************
+1. Yocto over view and its advantages?
+2. what is poky?
+3. What is layers?
+4. How layers work?
+5. If i have 2 recipes, which will build 1st?If its based on priority where will the priority is defined?
+6. What is bitbake engine?
+7. -c stands for?
+8. Machine vs distro vs Image
+9. How to add new distro in yocto?
+10.what is Grub bootloader? where it comes in bott flow?
+11.Linux boot flow?
+12.U-boot boot flow?
+13. How to boot with emmc & sd card?
+14. Bootloader?
+15. I2C driver code?
+16. what is Device tree? Explain its properties? 
+17. How to create a device node?
+18. what is ADB shell? QFIL?
+19. Fast boot? commands used?
+20. Fast boot vs ADB?
+21. what is MIFI technology works?
+22. Where environment is stored?
+23. Why uboot?
+24.TFTP boot?
+25. where environment variables who will use them?
+**********************************AMD 1st*****************************
+1. Why we need use secureboot?
+2. Boot process?
+3. Arm trusted fw?
+4. secureboot vs non secureboot boot folw?
+5. Embedded boot flow?
+6. MBR vs GPT?
+7. System calls?
+8. system calls ? examples?
+9. IOCtl? fork() in deapth?
+10. parent to child what will not be shared?
+11. copy on write?
+12. How processes execute?
+13. Stack vs Heap? when you use what?
+14. what are the args of free?
+15. How it deallocates?
+16. open()system call?
+17. why we need file descriptor?
+18. How to do changes in source code? why we really need patch?
+19. bbappend vs .bb?
+20. make vs Yocto?
+21. do_compile? how it works?
+22. segmentation fault in which stage of compiler stages it comes?
+23. what is Loader?
+24  what is static & dynamic Linking?
+25. Macros are handled in which stages of compilation?
+26. Where will be the Global variables stored? why?
+27. what is size of ptr?
+28. int vs char?
+29. what happens if we we assign char data to integer value?
+30  vice versa?
+*******************************AMD 2nd*************************************
+1. Count number of 1s in given number?
+2. I2C simple code to cover all basics?
+3. puzzles 3 jars
+   1 has sweets 1 has candies a has mixed mislabled how you will lable them correctly with 1 trial
+4. we have 1000 1rs coins we need to set them    
+2. *****************************VVDN_1st****************************************
+1. Oran 8t8r flow?
+2. which band of fpga 50/?
+3.Mplane explain?
+4.Framer & Beamer?
+5.Zcu 670 processor?
+6.user addition how we do using nacm?
+7.Mplane version?
+8.petalinux how to create layers?
+9. 5g full flow familiar in m plane?
+10. PTP protocol?
+11.M plane u plane parameters?
+12.Explain Radio unit?
+13.Mplane datasheet what you have gone through?
+14.steps to update Firmware? ex: software download, update etc
+15. Framer & Beamer?
+16.Explain device tree?
+17.Boot flow of embedded system?
+18.I2C, SPI?
+19.DHCP part in networking?
+20. How to add ip in static & dynamic?
+21. semaphore vs Mutex?
+22.grep command? 
+23. C program to merge linked list 1234 5678? o/p 15263748.
+24. c program to input and print linked list? 1234 o/p 1234.
+*************************************tata_exlxi_navya 1st****************************
+1. embedded bootflow?
+2. x86 bootflow?
+3. when we reset/poweron what happens in processor ?
+4. where bootloader is stored?
+5. what is bootrom? where exactly?
+6. how does processor know we have resetted?
+7. i2c code 0x50 who sets that address?
+8. i2csimple code?
+9. i2c full explain?
+10. we have 2 masters 3 slaves how bus arbitration works?
+11. libraries (static&dynamic libraries)
+12. i2c code have .so file what to do locate that?
+13. c program to print 12345?
+14. c program to print 13579?
+15. strcpy functionality without string.h?
+16. To count no.of set bits in given number?
+17. swap with call by reference?
+18. process layout/memory layout?
+19. IPC mechanisms?
+20. storage classes?
+21. char device driver explain? which drivers you know?
+22. How device driver communication happens?
+23. what are system calls?
+24. user space vs kernel space?
+25. explain opps & How to debug and avoid?
+26. mutex vs semaphore?
+27.Explain software development process?
+***************************AMD_fubeus_Techno_managerial*****************************
+1.why you want to switch to other company?
+2.kernel error you faced and resolved?
+3.whats the use of volatile keyword?
+4. mutex vs semaphore?
+5. process vs thread?
+6. strcpy program?
+7. puzzle question, railway bridge 2km train running at 30kmph how much time it takes in minutes to cross bridge?
+ans: time=distance/speed
+2/30*60=4 min
+******************************Ignatarium 1st*****************************************
+1. How slave address will be detected by driver?
+2. i2c flow?
+3. static vs dynamic allocation with use cases?
+4. what is segmentation fault how you devug & resolve?
+5. what is kernel panic how you devug & resolve?
+6. volatile explain?
+7. Embedded vs c?
+8. yocto recipe key components explain them?
+9. explain and write simple.bb to create custom layer?
+10. secureboot boot flow vs normal boot flow?
+11. I loaded non signed module what happens?
+12. Enabled secureboot how to remove secureboot permanently other than mokutil/bios?
+13. I2c code to read value from temp sensor?
+14. Battery health monitoring?
+15. i2cdetect what it do?
+16. what o/p it gives?
+17. when it gives uu? device at 0x50 ? driver loaded at 0x50 what change ? Ans: UU
+*****************************************Ignatarium 2nd************************************************
+
+1. ORAN project overview?
+2. Inseego & Centos overview?
+3. I2C Code explain you developed in FLEX?
+4. Type qualifiers in c Explain each where you use?
+5. volatile in deep how it works whats the use of it?
+he explained with volatile it says don't goto cache..
+6. with volatile without volatile keyword where it stores.whats the diff?
+7. when does cache happens?
+8. will compiler comes in boot process?
+9. int a,  volatile int a diff?
+10. what is optimization with practical example.
+11. Even or or odd program without % using functions and returns?
+12. it should return 0 for even 1 for odd?
+13. I2C explain?
+14. Its a multi master multi slave right if a slave already busy how it communicates to master that it is busy?
+15. Its through cloack stretching..Explain this?
+16. How it supports multi master multi slave with real time explaination.
+17. if we have 2 threads can both masters communicate at same time ...if no explain why?
+18. Default state of I2C is ? Low why? 
+********************************************Thundersoft qualcomm************************
+*******************************************Pannel 1**************************************
+1. what is kernel driver and its types?
+2. simple code to allocate 10? How you free? what you pass to free how it knows size to free?
+3. Difference b/w thread & process?
+4. Two threads run at same time, which executes 1st?
+5. we have 2 processes same resources how it works? How it manages resources?
+6. Synchronization techniques?
+7. How 2 process safely access the same resource?
+8. C program to reverese single linked list?
+9. complexity of program ?its types?
+10.sorting an array?
+11.Bubble sort explain? Time & space complexity?
+12.what is virtual memory? why we need it?
+13. Diff between physical and logical memory?
+14. What is Fragmentation?
+15. what is cache?
+16. junk?
+17. zombie process?
+18. stack/heap which is fast?
+19. why stack?
+20. Malloc / calloc which is fast?
+21. what is secureboot?
+22. what is Gi clone, push, pull, merge, confilict?
+23. Bitbake?
+*******************************************pannel2**************************************************
+24. virtual memory in deep?
+25. Adress translation techniques? whats the need of them?
+26. Where do local variables store?
+27. What does heap stores?
+28. what is Deadlock? How to avoid?
+29. System calls?
+30. whats interrupt, Interrupt Handler?
+31. what is copy to user?
+32. C program to count numbers that cannot be represented as sum of any subset of the given set?
+input: 1 10 11 6 15 0/p: 2
+input 1 1 1 1 o/p: 5
+33. Memcopy implementation program?
+34. sizeof() implementation program?
+35. 
+
+
+
+
