@@ -1,0 +1,54 @@
+Building Ubuntu in UEFI Mode with Secure Boot
+
+Step 1: Prepare a Bootable USB with Ubuntu
+1. Download the Ubuntu ISO from the official website: https://ubuntu.com/download.
+2. Use a tool like Rufus (Windows) or Etcher (Linux/Mac) to create a bootable USB.
+   - In Rufus, set 'Partition scheme' to GPT and 'Target system' to UEFI (non-CSM).
+   - Select the ISO file and click Start.
+
+Step 2: Configure BIOS/UEFI Settings
+1. Enter the BIOS/UEFI setup by pressing a key like F2, F10, or DEL during boot.
+2. Enable UEFI Boot Mode and disable Legacy/CSM Boot if necessary.
+3. (Optional) Enable Secure Boot if desired or disable it temporarily for installation.
+
+Step 3: Boot from USB and Install Ubuntu
+1. Select the USB device from the boot menu (usually F12 or Esc).
+2. Choose 'Try Ubuntu' or 'Install Ubuntu' from the boot menu.
+3. During partitioning, select the existing EFI System Partition (ESP) or create a new one.
+   - Use FAT32 as the file system and mount it at /boot/efi.
+4. Complete the installation by following the remaining prompts.
+
+Step 4: Verify UEFI Boot Configuration
+1. Ensure the system boots directly into Ubuntu in UEFI mode.
+2. Verify UEFI mode with the following command:
+   ls /sys/firmware/efi
+
+Step 5: Create a Custom .EFI File (Optional)
+1. Install GRUB-EFI packages:
+   sudo apt-get install grub-efi-amd64
+2. Generate a GRUB EFI file:
+   grub-mkimage -o /boot/efi/EFI/ubuntu/custom_grub.efi -O x86_64-efi part_gpt fat ext2 normal
+
+Step 6: Sign Bootloader and Kernel for Secure Boot (Optional)
+1. Install sbsigntool:
+   sudo apt-get install sbsigntool
+2. Generate Secure Boot keys:
+   openssl req -new -x509 -newkey rsa:2048 -keyout MOK.key -out MOK.crt -nodes -days 3650 -subj "/CN=Custom Secure Boot/"
+3. Sign GRUB and the kernel:
+   sbsign --key MOK.key --cert MOK.crt /boot/efi/EFI/ubuntu/grubx64.efi --output /boot/efi/EFI/ubuntu/grubx64.efi
+   sbsign --key MOK.key --cert MOK.crt /boot/vmlinuz --output /boot/vmlinuz
+4. Enroll the key with mokutil:
+   sudo mokutil --import MOK.crt
+
+Step 7: Configure GRUB and Boot Entries
+1. Update the GRUB configuration:
+   sudo update-grub
+2. Verify the boot entries:
+   efibootmgr -v
+3. (Optional) Create a custom EFI boot entry:
+   sudo efibootmgr --create --disk /dev/sda --part 1 --label "CustomUbuntu" --loader "\EFI\ubuntu\custom_grub.efi"
+
+Step 8: Testing and Final Checks
+1. Reboot the system and ensure it boots into Ubuntu smoothly.
+2. Verify that Secure Boot is working using the following command:
+   dmesg | grep -i secure

@@ -1,0 +1,312 @@
+See what layers we have build $ $ bitbake-layers show-layers
+
+
+
+
+NOTE: Starting bitbake server...
+NOTE: Started PRServer with DBfile: /home/mnidev/work/tisdk/build/cache/prserv.sqlite3, Address: 127.0.0.1:60713, PID: 472910
+layer                 path                                      priority
+==========================================================================
+meta-tisdk            /home/mnidev/work/tisdk/sources/meta-tisdk  12
+meta-arago-distro     /home/mnidev/work/tisdk/sources/meta-arago/meta-arago-distro  10
+meta-arago-extras     /home/mnidev/work/tisdk/sources/meta-arago/meta-arago-extras  10
+meta-arago-demos      /home/mnidev/work/tisdk/sources/meta-arago/meta-arago-demos  10
+meta-arago-test       /home/mnidev/work/tisdk/sources/meta-arago/meta-arago-test  10
+meta-networking       /home/mnidev/work/tisdk/sources/meta-openembedded/meta-networking  5
+meta-python           /home/mnidev/work/tisdk/sources/meta-openembedded/meta-python  5
+meta-oe               /home/mnidev/work/tisdk/sources/meta-openembedded/meta-oe  5
+meta-gnome            /home/mnidev/work/tisdk/sources/meta-openembedded/meta-gnome  5
+meta-filesystems      /home/mnidev/work/tisdk/sources/meta-openembedded/meta-filesystems  5
+meta-ti-extras        /home/mnidev/work/tisdk/sources/meta-ti/meta-ti-extras  6
+meta-ti-bsp           /home/mnidev/work/tisdk/sources/meta-ti/meta-ti-bsp  6
+meta-arm              /home/mnidev/work/tisdk/sources/meta-arm/meta-arm  5
+meta-arm-toolchain    /home/mnidev/work/tisdk/sources/meta-arm/meta-arm-toolchain  5
+meta                  /home/mnidev/work/tisdk/sources/oe-core/meta  5
+~/work/tisdk/build (repo_build)
+build$ bitbake-layers create-layer ../sources/<layer_name>
+
+
+
+$ bitbake-layers create-layer ../sources/meta-mni-irfu
+NOTE: Starting bitbake server...
+NOTE: Started PRServer with DBfile: /home/mnidev/work/tisdk/build/cache/prserv.sqlite3, Address: 127.0.0.1:60749, PID: 484735
+Add your new layer with 'bitbake-layers add-layer ../sources/meta-mni-irfu'
+build$ bitbake-layers add-layer ../sources/<layer_name>
+
+
+
+$ bitbake-layers add-layer ../sources/meta-mni-irfu
+NOTE: Starting bitbake server...
+NOTE: Started PRServer with DBfile: /home/mnidev/work/tisdk/build/cache/prserv.sqlite3, Address: 127.0.0.1:60825, PID: 485575
+ 
+
+See new layer: meta-mni-irfu /home/mnidev/work/tisdk/sources/meta-mni-irfu 6
+
+build$ bitbake-layers show-layers
+
+
+
+$ bitbake-layers show-layers
+NOTE: Starting bitbake server...
+NOTE: Started PRServer with DBfile: /home/mnidev/work/tisdk/build/cache/prserv.sqlite3, Address: 127.0.0.1:60741, PID: 486769
+layer                 path                                      priority
+==========================================================================
+meta-tisdk            /home/mnidev/work/tisdk/sources/meta-tisdk  12
+meta-arago-distro     /home/mnidev/work/tisdk/sources/meta-arago/meta-arago-distro  10
+meta-arago-extras     /home/mnidev/work/tisdk/sources/meta-arago/meta-arago-extras  10
+meta-arago-demos      /home/mnidev/work/tisdk/sources/meta-arago/meta-arago-demos  10
+meta-arago-test       /home/mnidev/work/tisdk/sources/meta-arago/meta-arago-test  10
+meta-networking       /home/mnidev/work/tisdk/sources/meta-openembedded/meta-networking  5
+meta-python           /home/mnidev/work/tisdk/sources/meta-openembedded/meta-python  5
+meta-oe               /home/mnidev/work/tisdk/sources/meta-openembedded/meta-oe  5
+meta-gnome            /home/mnidev/work/tisdk/sources/meta-openembedded/meta-gnome  5
+meta-filesystems      /home/mnidev/work/tisdk/sources/meta-openembedded/meta-filesystems  5
+meta-ti-extras        /home/mnidev/work/tisdk/sources/meta-ti/meta-ti-extras  6
+meta-ti-bsp           /home/mnidev/work/tisdk/sources/meta-ti/meta-ti-bsp  6
+meta-arm              /home/mnidev/work/tisdk/sources/meta-arm/meta-arm  5
+meta-arm-toolchain    /home/mnidev/work/tisdk/sources/meta-arm/meta-arm-toolchain  5
+meta                  /home/mnidev/work/tisdk/sources/oe-core/meta  5
+meta-mni-irfu         /home/mnidev/work/tisdk/sources/meta-mni-irfu  6
+See what was created
+
+
+~/work/tisdk/sources/meta-mni-irfu (repo_build)
+$ ls
+conf  COPYING.MIT  README  recipes-example
+Create a machine in conf folder
+
+
+$cd conf
+conf $ mkdir machine
+conf $ cd machine 
+machine #
+Seed machine directory with the am62xx-evm (recall MACHINE ?= "am62xx-evm" )
+
+
+cp ../../meta-ti/meta-ti-bsp/conf/machine/am62xx-evm.conf .
+cp ../../meta-ti/meta-ti-bsp/conf/machine/am62xx-evm-k3r5.conf .
+~/work/tisdk/sources/meta-mni-irfu/conf/machine (repo_build)
+$ ls
+am62xx-evm.conf  am62xx-evm-k3r5.conf
+~/work/tisdk/sources/meta-mni-irfu/conf/machine (repo_build)
+$ mkdir include
+~/work/tisdk/sources/meta-mni-irfu/conf/machine (repo_build)
+$ cp ../../../meta-ti/meta-ti-bsp/conf/machine/include/
+am57xx.inc     am62xx.inc     dra7xx.inc     j721s2.inc     k3.inc         omap-a15.inc   ti43x.inc
+am62axx.inc    am64xx.inc     j7200.inc      j722s.inc      k3r5.inc       omapl138.inc   ti-extras.inc
+am62pxx.inc    am65xx.inc     j721e.inc      j784s4.inc     mesa-pvr.inc   ti33x.inc      ti-soc.inc
+~/work/tisdk/sources/meta-mni-irfu/conf/machine (repo_build)
+$ cp ../../../meta-ti/meta-ti-bsp/conf/machine/include/am62xx.inc include/
+~/work/tisdk/sources/meta-mni-irfu/conf/machine (repo_build)
+$ cp ../../../meta-ti/meta-ti-bsp/conf/machine/include/k3r5.inc include/
+~/work/tisdk/sources/meta-mni-irfu/conf/machine (repo_build)
+Rename the configuration files to align with the mni-irfu layer name
+
+
+
+$ ls
+am62xx-evm.conf  am62xx-evm-k3r5.conf  include
+~/work/tisdk/sources/meta-mni-irfu/conf/machine (repo_build)
+$ mv am62xx-evm.conf mni-irfu-evm.conf
+~/work/tisdk/sources/meta-mni-irfu/conf/machine (repo_build)
+$ ls
+am62xx-evm-k3r5.conf  include  mni-irfu-evm.conf
+~/work/tisdk/sources/meta-mni-irfu/conf/machine (repo_build)
+$ mv am62xx-evm-k3r5.conf mni-irfu-evm-k3r5.conf
+~/work/tisdk/sources/meta-mni-irfu/conf/machine (repo_build)
+ 
+
+Because the mni-irfu-evm.conf has some required includes.
+
+
+
+$ cp ../../../meta-ti/meta-ti-bsp/conf/machine/include/ti-extras.inc include/
+$ ls include/
+am62xx.inc  k3r5.inc  ti-extras.inc
+ 
+
+This was due to the includes needed from the original conf file, we can customize names of includes later if needed.
+
+
+
+$ cat mni-irfu-evm.conf
+#@TYPE: Machine
+#@NAME: AM62XX EVM    <--------------------------------------------Update name.
+#@DESCRIPTION: Machine configuration for the TI AM62XX EVM
+require conf/machine/include/am62xx.inc
+require conf/machine/include/ti-extras.inc
+KERNEL_DEVICETREE_PREFIX = " \
+    ti/k3-am625 \
+    ti/k3-am62x-sk \
+"
+KERNEL_DEVICETREE = " \
+    ti/k3-am625-sk.dtb \
+"
+UBOOT_MACHINE = "am62x_evm_a53_defconfig"
+After Updates
+
+see:
+
+
+
+#@NAME: MNI_IRFU_2.0
+#@DESCRIPTION: Machine configuration for MNI IRFU 2.0
+
+
+$ cat mni-irfu-evm.conf
+#@TYPE: Machine
+#@NAME: MNI_IRFU_2.0
+#@DESCRIPTION: Machine configuration for MNI IRFU 2.0
+require conf/machine/include/am62xx.inc
+require conf/machine/include/ti-extras.inc
+KERNEL_DEVICETREE_PREFIX = " \
+    ti/k3-am625 \
+    ti/k3-am62x-sk \
+"
+KERNEL_DEVICETREE = " \
+    ti/k3-am625-sk.dtb \
+"
+UBOOT_MACHINE = "am62x_evm_a53_defconfig"
+~/work/tisdk/sources/meta-mni-irfu/conf/machine (repo_build)
+Now, because the machine name is no longer AM62XX EVM we need to not break the device tree that is still going to come from the /meta-ti/meta-ti-bsp/conf/machine thus for now we comment out until we have added our custom DTB files.
+
+Now we change are target machine we are compiling for
+That is we update the machine name in local.conf
+
+note meta-mni-irfu where meta-<machine-name>
+
+replace
+
+
+
+MACHINE ?= “am62xx-evm”
+with
+
+MACHINE ?= mni-irf-evm
+
+build $ vi conf/local.conf
+
+
+
+#
+# Machine Selection
+#
+# You need to select a specific machine to target the build with. There are a selection
+# of emulated machines available which can boot and run in the QEMU emulator:
+#
+MACHINE ?= "mni-irfu"
+ 
+
+Finally add this new layer with the new machine name
+
+
+$ bitbake-layers add-layer ../sources/meta-mni-irfu
+NOTE: Starting bitbake server...
+NOTE: Started PRServer with DBfile: /home/mnidev/work/tisdk/build/cache/prserv.sqlite3, Address: 127.0.0.1:60717, PID: 520250
+ 
+
+Confirm this new machine is in the layers
+
+
+$ bitbake-layers show-layers
+NOTE: Starting bitbake server...
+NOTE: Started PRServer with DBfile: /home/mnidev/work/tisdk/build/cache/prserv.sqlite3, Address: 127.0.0.1:60785, PID: 520923
+layer                 path                                      priority
+==========================================================================
+meta-tisdk            /home/mnidev/work/tisdk/sources/meta-tisdk  12
+meta-arago-distro     /home/mnidev/work/tisdk/sources/meta-arago/meta-arago-distro  10
+meta-arago-extras     /home/mnidev/work/tisdk/sources/meta-arago/meta-arago-extras  10
+meta-arago-demos      /home/mnidev/work/tisdk/sources/meta-arago/meta-arago-demos  10
+meta-arago-test       /home/mnidev/work/tisdk/sources/meta-arago/meta-arago-test  10
+meta-networking       /home/mnidev/work/tisdk/sources/meta-openembedded/meta-networking  5
+meta-python           /home/mnidev/work/tisdk/sources/meta-openembedded/meta-python  5
+meta-oe               /home/mnidev/work/tisdk/sources/meta-openembedded/meta-oe  5
+meta-gnome            /home/mnidev/work/tisdk/sources/meta-openembedded/meta-gnome  5
+meta-filesystems      /home/mnidev/work/tisdk/sources/meta-openembedded/meta-filesystems  5
+meta-ti-extras        /home/mnidev/work/tisdk/sources/meta-ti/meta-ti-extras  6
+meta-ti-bsp           /home/mnidev/work/tisdk/sources/meta-ti/meta-ti-bsp  6
+meta-arm              /home/mnidev/work/tisdk/sources/meta-arm/meta-arm  5
+meta-arm-toolchain    /home/mnidev/work/tisdk/sources/meta-arm/meta-arm-toolchain  5
+meta                  /home/mnidev/work/tisdk/sources/oe-core/meta  5
+meta-mni-irfu         /home/mnidev/work/tisdk/sources/meta-mni-irfu  6
+ 
+
+The layer update is also seen in build/conf/bblayers.conf
+
+cat bblayers.conf
+
+
+So what we did was
+we created a new layer with a new machine name from the existing default machine name
+
+~/work/tisdk/sources/meta-ti/meta-ti-bsp/conf/machine/am62xx-evm.conf
+
+~/work/tisdk/sources/meta-mni-irfu/conf/machine/mni-irfu-evm.conf
+
+NOTE expect when we get to real HW to have a second machine type with this layer recall the machine folder can have multiple machines.
+
+
+
+/home/mnidev/work/tisdk/sources/meta-ti/meta-ti-bsp/conf/machine/am62axx-evm-k3r5.conf
+/home/mnidev/work/tisdk/sources/meta-ti/meta-ti-bsp/conf/machine/am62pxx-evm.conf
+/home/mnidev/work/tisdk/sources/meta-ti/meta-ti-bsp/conf/machine/am62pxx-evm-k3r5.conf
+/home/mnidev/work/tisdk/sources/meta-ti/meta-ti-bsp/conf/machine/am62xx-evm.conf
+/home/mnidev/work/tisdk/sources/meta-ti/meta-ti-bsp/conf/machine/am62xx-evm-k3r5.conf
+/home/mnidev/work/tisdk/sources/meta-ti/meta-ti-bsp/conf/machine/am62xx-lp-evm.conf
+ 
+
+Thus along these lines:
+
+Updates are: mni-irfu-evm.conf & mni-irfu-20.conf
+
+The EVM indicates we are working with the TI EVM but just wanted to pull it (abscond) within our machine layers.
+
+
+
+$ head  mni-irfu-evm.conf
+#@TYPE: Machine
+#@NAME: MNI_IRFU_EVM_20
+#@DESCRIPTION: Machine configuration for MNI IRFU EVM 2.0
+#@MAINTAINER: Robert Gulde <robertg@microwavenetworks.com>
+#Remove any machine specific overides, they will look like DEFINITION_SOMETHING_<machine-specific-override>
+# i.e. KERNEL_DEVICETREE_PREFIX_mni-irfu-20. simply drop suffix override after PRFIXxxxxxx
+require conf/machine/include/am62xx.inc
+require conf/machine/include/ti-extras.inc
+~/work/tisdk/sources/meta-mni-irfu/conf/machine (repo_build)
+This will closely reflect the new IRFU 20 board
+$ head mni-irfu-20.conf
+#@TYPE: Machine
+#@NAME: MNI_IRFU_20
+#@DESCRIPTION: Machine configuration for MNI IRFU 2.0
+#@MAINTAINER: Robert Gulde <robertg@microwavenetworks.com>
+#Remove any machine specific overides, they will look like DEFINITION_SOMETHING_<machine-specific-override>
+# i.e. KERNEL_DEVICETREE_PREFIX_mni-irfu-20. simply drop suffix override after PRFIXxxxxxx
+require conf/machine/include/am62xx.inc
+require conf/machine/include/ti-extras.inc
+~/work/tisdk/sources/meta-mni-irfu/conf/machine (repo_build)
+ 
+
+Confirm new layer with device name updates the host name.
+Perform Bitbake 
+
+ARAGO_RT_ENABLE=1 bitbake -k tisdk-base-image           ← Note same bitbake recipe
+
+Review output image folder
+
+~/work/tisdk/build/deploy-ti/images (repo_build)
+$ ls -alrt
+total 32
+drwxr-xr-x 3 mnidev mnidev  4096 Apr 23 19:20 ..
+drwxr-xr-x 5 mnidev mnidev 12288 Apr 24 19:27 am62xx-evm
+drwxr-xr-x 4 mnidev mnidev  4096 Apr 26 11:36 .
+drwxr-xr-x 5 mnidev mnidev 12288 Apr 26 11:48 mni-irfu-evm   ← Yet do to the latest layer being added we see the mni-irfu-evm folder now. 
+
+$ ls tisdk-base*    NOTE THE mni-irfu-evm  updates in the file names.
+tisdk-base-image.env                                               tisdk-base-image-mni-irfu-evm-20240426173631.rootfs.wic.xz  tisdk-base-image-mni-irfu-evm.testdata.json
+tisdk-base-image-mni-irfu-evm-20240426173631.rootfs.cpio.xz        tisdk-base-image-mni-irfu-evm-20240426173631.testdata.json  tisdk-base-image-mni-irfu-evm.wic.bmap
+tisdk-base-image-mni-irfu-evm-20240426173631.rootfs.manifest       tisdk-base-image-mni-irfu-evm.cpio.xz                       tisdk-base-image-mni-irfu-evm.wic.xz
+tisdk-base-image-mni-irfu-evm-20240426173631.rootfs.tar.xz         tisdk-base-image-mni-irfu-evm.manifest                      tisdk-base-image-sdimage-2part-efi.wks
+tisdk-base-image-mni-irfu-evm-20240426173631.rootfs.tar.xz.md5sum  tisdk-base-image-mni-irfu-evm.tar.xz
+tisdk-base-image-mni-irfu-evm-20240426173631.rootfs.wic.bmap       tisdk-base-image-mni-irfu-evm.tar.xz.md5sum
+
+ 
